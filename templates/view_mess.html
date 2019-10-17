@@ -1,0 +1,68 @@
+{%extends "main.html"%}
+
+<!-- Main content -->
+
+{%block sidebar%}
+
+<ul class="sidebar-menu" data-widget="tree">
+      <li class="header">Student</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li ><a href="{{ url_for('home') }}"><i class="fa fa-link"></i> <span>Home</span></a></li>
+      <li class="active"><a href="{{ url_for('registration') }}"><i class="fa fa-link"></i> <span>Add a student</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>View Details</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url_for('view_hostel') }}">View Hostel Details</a></li>
+          <li class="active"><a href="{{ url_for('view_mess') }}">View Mess Details</a></li>
+        </ul>
+      </li>
+    </ul>
+    {%endblock%}
+    {%block content%}
+    <section class="content container-fluid">
+            <div style="text-align: center;">
+            <div class="containe">
+                <h2>Mess Details</h2>
+                    <table class="table table-striped table-bordered" style="border-color:black ; size: inherit;" >
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>Name</th>
+                            <th>Room NO</th>
+                            <th>ID</th>
+                            <th>Payment status</th>
+                            <th>Paid on</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Prathamesh Iyer</td>
+                            <td>26</td>
+                            <td>VU4f1510000</td>
+                            <td>Pending</td>
+                            <td>N/A</td>
+                          </tr>
+                          <tr>
+                            <td>Tushar Iyer</td>
+                            <td>26</td>
+                            <td>VU4f1510001</td>
+                            <td>Successful</td>
+                            <td>26-10-2019</td>
+        
+                          </tr>
+                          <tr>
+                            <td>Idris Khan</td>
+                            <td>29</td>
+                            <td>VU4f1510002</td>
+                            <td>Successful</td>
+                            <td>01-11-2019</td>
+        
+                          </tr>
+                        </tbody>
+                      </table>
+                      </div></div>
+    </section>
+{%endblock%}

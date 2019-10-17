@@ -1,0 +1,39 @@
+{%extends "main.html"%}
+
+{%block sidebar%}
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">Student</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li class="active" ><a href="{{ url_for('home') }}"><i class="fa fa-link"></i> <span>Home</span></a></li>
+      <li><a href="{{ url_for('registration') }}"><i class="fa fa-link"></i> <span>Add a student</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>View Details</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url_for('view_hostel') }}">View Hostel Details</a></li>
+          <li><a href="{{ url_for('view_mess') }}">View Mess Details</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    {%endblock%}
+    {%block content%}
+    <!-- Main content -->
+    <section class="content container-fluid">
+      <div style="text-align: center;" >
+        <h2>DR. PANJABRAO DESHMUKH BOYS HOSTEL</h2>
+        <p><u>(Only for economically weaker section students)</u></p>
+        <br><br>
+        <p>Managed by</p>
+        <h2>VASANTDADA PATIL PRATHISHTHAN</h2>
+        <div style="align-items: center;  align-self: center; widows: 100px;;height:180px;border:1px solid #000;"><br><br>At:<br> 1/A-3 , Shivshahi Punarvasan Prakalp<br>
+        Maryaditya, Antophill, Opposite Wadala<br> Fire Brigade, Wadala Mumbai 400037.</div></div>
+        
+          <br>
+        </br>
+          
+    </section>
+{%endblock%}
