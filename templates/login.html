@@ -15,7 +15,16 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="static/login.css" rel="stylesheet" media="all">
-    
+    <script type="javascript">
+
+		function showalert(message){
+			alert(message);
+		}
+		{% for message in get_flashed_messages() %}
+		var mes = "{{message}}";
+		showalert(mes)
+		{% endfor %}
+	</script>
 </head>
 <!--Coded with love by Mutiullah Samim-->
 <body>
@@ -27,32 +36,41 @@
 						<img src="static/college_logo.png" class="brand_logo" alt="Logo">
 					</div>
 				</div>
+				
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<form role="form", method="POST" action="">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" name="username" class="form-control input_user" value="" placeholder="username">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
 						</div>
-						<div class="form-group">
+						{% if error %}
+						<p> <strong>Error:</strong>{{error}}</p>
+						{% endif %}
+
+						{% for message in get_flashed_messages() %}
+						<p> <strong>{{message}}</strong></p>
+						{% endfor %}
+						<button type="submit">Submit</button>
+						<!--<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
-						</div>
+						</div>-->
 					</form>
 				</div>
-				<div class="d-flex justify-content-center mt-3 login_container">
-					<button onclick="window.location.href='{{ url_for('home')}}'" type="button" name="button" class="btn login_btn">Login</button>
+				<!--<div class="d-flex justify-content-center mt-3 login_container">
+					<button onclick="window.location.href='{{ url_for('home')}}'" type="submit" name="button" class="btn login_btn">Login</button>
 				</div>
-				
+			-->
 				</div>
 			</div>
 		</div>
