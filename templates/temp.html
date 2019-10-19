@@ -386,3 +386,13 @@ desired effect
     </ul>
   </li>
 </ul>
+
+create table hostel_student(stud_id varchar(20) not null primary key, surname varchar(20),name varchar(20), father_name varchar(20), mother_name varchar(20), date DATE, place_of_birth varchar(20), nationality varchar(20), religion varchar(20), blood_group varchar(10), caste varchar(20), sub_caste varchar(20), aadhar_card int(30), pan varchar(20), passed_x_in_maha varchar(20), father_domiciled_in_maha varchar(10), yearly_income float(20), college_address varchar(80), percentage_in_last_exam float(10), admission_through varchar(30))
+
+create table paid(stud_id varchar(20) not null , stud_mess_id varchar(20), payment_till_now float not null, last_payment_amt float not null, last_payment_date date not null, payment_start_date date not null);
+
+
+create table stud_pers(stud_id varchar(20)not null references host_stud(stud_id), addr_line1 varchar(50) not null, addr_line2 varchar(50), city varchar(20) not null, state varchar(20) not null, pin int(6) not null, mobile_no varchar(20), email_id varchar(20), resident_n0 varchar(20), year_of_study int not null);
+
+create table stud_father(stud_id varchar(20) not null references host_stud(stud_id), surname varchar(20) not null, father_name varchar(20) not null, occupation varchar(20) not null, organization varchar(20), qualification varchar(20), office_addr varchar(20) not null, mobile_no varchar(20), fax varchar(20), email_id varchar(20));
+

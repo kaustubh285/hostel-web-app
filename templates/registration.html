@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <h6 class="title">Student Registration Form</h6>
                         </div>
                         <div class="card-body">
-                          <form method="POST">
+                          <form method="POST" enctype="multipart/form-data" role="form"  action="">
                             <div class="form-row m-b-55">
                               <div class="name">Name</div>
                               <div class="value">
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Date Of Birth</div>
                               <div class="value">
                                 <div class="input-group">
-                                  <form id="form1" runat="server">
+                                  <!--<form id="form1" runat="server">-->
                                     <div>
                                       Day/Month/Year
                                       <br>
@@ -280,7 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                       </select>
                 
                                     </div>
-                                  </form>
+                                  <!--</form>-->
                 
                                 </div>
                               </div>
@@ -364,7 +364,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <input type="file" name="fileupload" value="fileupload" id="fileupload">
                               <label for="fileupload"> Select a file to upload</label>
                             </div>
-                            
+                            {% for message in get_flashed_messages() %}
+						                <p style="color: red; font-size: 13px;"> <strong>Error:</strong>{{message}}</p>
+						                {% endfor %}
                 
                             <div class="form-row p-t-20">
                               <label class="label label--block">Are you an existing Hostel student?</label>
@@ -379,9 +381,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </label>
                               </div>
                             </div>
-                            <div>
-                              <button class="btn btn--radius-2 btn--red" type="submit" onclick="window.location.href='{{ url_for('view_hostel')}}'">Register</button>
-                            </div>
+                            <!--<div>
+                              <button class="btn btn--radius-2 btn--red" type="submit" >Register</button>
+                            </div>-->
+                            <button type="submit">Submit</button>
                           </form>
                         </div>
                       </div>
