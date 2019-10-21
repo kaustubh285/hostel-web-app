@@ -67,7 +67,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main CSS-->
   <link href="static/css/main.css" rel="stylesheet" media="all">
     <style>
-
+      function val() {
+        var x = document.forms["form"]["fname"].value;
+        if (x == "")
+         {
+          alert("Name must be filled out");
+          return false;
+        }
+        
+      }
         
     .contain{
       width: 50%;
@@ -90,95 +98,191 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <h6 class="title">Student Registration Form</h6>
                         </div>
                         <div class="card-body">
-                          <form method="POST" enctype="multipart/form-data" role="form"  action="">
+                          <form method="POST" name="form" enctype="multipart/form-data" role="form" onsubmit="return (val())" action="" style="font-size: 12px;" >
+                            
+                            <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Student Personal Details</strong></u></p></div>
+                            <div class="form-row" style="padding-top: 20px;">
+                                <div class="name">Student Id Number<span style="color: red;">*</span></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="stud_id">
+                                  </div>
+                                </div>
+                            </div>
                             <div class="form-row m-b-55">
                               <div class="name">Name</div>
                               <div class="value">
                                 <div class="row row-space">
                                   <div class="col-2">
                                     <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="first_name">
-                                      <label class="label--desc">first name</label>
+                                      <input class="input--style-5" type="text" name="fname">
+                                      <label style="padding-left: 5px;"class="label--desc">first name<span style="color: red;">*</span></label>
                                     </div>
                                   </div>
                                   <div class="col-2">
                                     <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="last_name">
-                                      <label class="label--desc">last name</label>
+                                      <input class="input--style-5" type="text" name="lname">
+                                      <label style="padding-left: 5px;"class="label--desc">last name<span style="color: red;">*</span></label>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="form-row">
-                              <div class="name">Nationality</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+
+                            <br>
+                            <div class="form-row m-b-55">
+                                <div class="name">Parents</div>
+                                <div class="value">
+                                  <div class="row row-space">
+                                    <div class="col-2">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="father_name">
+                                        <label style="padding-left: 5px;"class="label--desc">Father's Name<span style="color: red;">*</span></label>
+                                      </div>
+                                    </div>
+                                    <div class="col-2">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mother_name">
+                                        <label style="padding-left: 5px;"class="label--desc">Mother's Name<span style="color: red;">*</span></label>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Place of Birth</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
-                                </div>
+                              <br>
+                              
+
+                              <div class="form-row">
+                                  <div class="name">Mobile No<span style="color: red;">*</span></div>
+                                  <div class="value">
+                                    <div class="input-group">
+                                      <input class="input--style-5" type="number" name="mobile_no">
+                                    </div>
+                                  </div>
                               </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Religion</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+
+                              <div class="form-row">
+                                  <div class="name">Email id<span style="color: red;">*</span></div>
+                                  <div class="value">
+                                    <div class="input-group">
+                                      <input class="input--style-5" type="email" name="email">
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Caste</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+
+
+                              <div class="form-row m-b-55">
+                                  <div class="name">Address</div>
+                                  <div class="value">
+                                    <div class="row row-space">
+                                      <div class="col-2">
+                                        <div class="input-group-desc">
+                                          <input class="input--style-5" type="text" name="add1">
+                                          <label style="padding-left: 5px;"class="label--desc">Address Line 1<span style="color: red;">*</span></label>
+                                        </div>
+                                      </div>
+                                      <div class="col-2">
+                                        <div class="input-group-desc">
+                                          <input class="input--style-5" type="text" name="add2">
+                                          <label style="padding-left: 5px;" class="label--desc">Address Line 2<span style="color: red;">*</span></label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Sub-caste</div>
+                                <div class="form-row m-b-55">
+                                    <div class="name"></div>
+                                    <div class="value">
+                                      <div class="row row-space">
+                                        <div class="col-2">
+                                          <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="city">
+                                            <label style="padding-left: 5px;"class="label--desc">City<span style="color: red;">*</span></label>
+                                          </div>
+                                        </div>
+                                        <div class="col-2">
+                                          <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="state">
+                                            <label style="padding-left: 5px;" class="label--desc">State<span style="color: red;">*</span></label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-row m-b-55">
+                                      <div class="name"></div>
+                                      <div class="value">
+                                        <div class="row row-space">
+                                          <div class="col-2">
+                                            <div class="input-group-desc">
+                                              <input class="input--style-5" type="text" name="pincode">
+                                              <label style="padding-left: 5px;"class="label--desc">Pincode<span style="color: red;">*</span></label>
+                                            </div>
+                                          </div>
+                                          <div class="col-2">
+                                            <div class="input-group-desc">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>           
+                                  
+                            
+                                    <div class="form-row m-b-55">
+                                      <div class="name">Phone</div>
+                                      <div class="value">
+                                        <div class="row row-refine">
+                                          <div class="col-3">
+                                            <div class="input-group-desc">
+                                              <input class="input--style-5" type="text" name="area_code">
+                                              <label style="padding-left: 5px;" class="label--desc">Area Code<span style="color: red;">*</span></label>
+                                            </div>
+                                          </div>
+                                          <div class="col-9">
+                                            <div class="input-group-desc">
+                                              <input class="input--style-5" type="text" name="phone">
+                                              <label  style="padding-left: 5px;" class="label--desc">Phone Number<span style="color: red;">*</span></label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                              
+                                    <div class="form-row">
+                                        <div class="name">Mobile No(Parent's)<span style="color: red;">*</span></div>
+                                        <div class="value">
+                                          <div class="input-group">
+                                            <input class="input--style-5" type="email" name="par_mobile_no">
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-row">
+                                          <div class="name">Date Of Birth<span style="color: red;">*</span></div>
+                                          <div class="value">
+                                            <div class="input-group">
+                                              <!--<form id="form1" runat="server">-->
+                                                <div>
+                                                    <input class="input--style-5" type="date" name="date">
+                            
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                      </div>
+                              
+
+
+
+
+
+
+                                      <!--
+                              <div class="form-row">
+                              <div class="name">Date Of Birth<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Aadhar Card</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">UID no</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Pan</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="name">Date Of Birth</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <!--<form id="form1" runat="server">-->
+                                  <!--<form id="form1" runat="server">
                                     <div>
                                       Day/Month/Year
                                       <br>
@@ -229,7 +333,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <option value='11'>11</option>
                                         <option value='12'>12</option>
                                       </select>
-                                      <select name='day' id='blah'>
+                                      <select name='year' id='blah'>
                                         <option value='1947'>1947</option>
                                         <option value='1948'>1948</option>
                                         <option value='1949'>1949</option>
@@ -280,53 +384,88 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                       </select>
                 
                                     </div>
-                                  <!--</form>-->
+                                  <!--</form>
                 
+                                </div>
+                              </div>
+                            </div>-->
+                              <div class="form-row">
+                                  <div class="name">Place Of Birth<span style="color: red;">*</span></div>
+                                  <div class="value">
+                                    <div class="input-group">
+                                      <input class="input--style-5" type="text" name="POB">
+                                    </div>
+                                  </div>
+                                </div>
+                            <div class="form-row">
+                              <div class="name">Nationality<span style="color: red;">*</span></div>
+                              <div class="value">
+                                <div class="input-group">
+                                  <input class="input--style-5" type="text" name="nationality">
                                 </div>
                               </div>
                             </div>
                             <div class="form-row">
-                              <div class="name">Address:</div>
+                              <div class="name">Religion<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+                                  <input class="input--style-5" type="text" name="religion">
                                 </div>
                               </div>
                             </div>
-                
+
                             <div class="form-row">
-                              <div class="name">Email</div>
+                                <div class="name">Blood Group</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="gb">
+                                  </div>
+                                </div>
+                              </div>
+
+                            <div class="form-row">
+                              <div class="name">Caste<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="email" name="email">
+                                  <input class="input--style-5" type="text" name="caste">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="name">Sub-caste</div>
+                              <div class="value">
+                                <div class="input-group">
+                                  <input class="input--style-5" type="text" name="sub_caste">
                                 </div>
                               </div>
                             </div>
                             <div class="form-row m-b-55">
-                              <div class="name">Phone</div>
-                              <div class="value">
-                                <div class="row row-refine">
-                                  <div class="col-3">
-                                    <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="area_code">
-                                      <label class="label--desc">Area Code</label>
+                                <div class="name">UID</div>
+                                <div class="value">
+                                  <div class="row row-space">
+                                    <div class="col-2">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="aadhar">
+                                        <label style="padding-left: 5px;" class="label--desc">Aadhar Card No<span style="color: red;">*</span></label>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="phone">
-                                      <label class="label--desc">Phone Number</label>
+                                    <div class="col-2">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="pan">
+                                        <label style="padding-left: 5px;" class="label--desc">Pan Card</label>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            
+                            
                             <div class="form-row">
-                              <div class="name">Gender</div>
+                              <div class="name">Gender<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
                                   <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="subject">
+                                    <select name="gender">
                                       <option disabled="disabled" selected="selected">Choose option</option>
                                       <option>Male </option>
                                     </select>
@@ -335,39 +474,267 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                               </div>
                             </div>
+                            
+                            <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Father's Details</strong></u></p></div>
+                            <div class="form-row" style="padding-top: 10px;">
+                                <div class="name">Present Designation</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_present_designation">
+                                  </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-row">
-                              <div class="name" >City:</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+                                <div class="name">Name of Organization</div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_organization">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Qualification</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_qualification">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="name">Office Address</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_office_address">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row m-b-55">
+                                <div class="name"> Office Telephone</div>
+                                <div class="value">
+                                  <div class="row row-refine">
+                                    <div class="col-3">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="father_area_code">
+                                        <label style="padding-left: 5px;" class="label--desc">Area Code</label>
+                                      </div>
+                                    </div>
+                                    <div class="col-9">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="father_phone">
+                                        <label style="padding-left: 5px;"class="label--desc">Phone Number</label>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                        
                             <div class="form-row">
-                              <div class="name">State</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+                                <div class="name">Mobile Number</div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_mobile_no">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Fax</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_fax">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Email id</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_email">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Mother's / Local Guardian's Details</strong></u></p></div>
+                            
+                            <div class="form-row" style="padding-top: 10px;">
+                                <div class="name">Present Designation</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_present_designation">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="name">Name of Organization</div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_organization">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Qualification</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_qualification">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="name">Office Address</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_office_address">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row m-b-55">
+                                <div class="name"> Office Telephone</div>
+                                <div class="value">
+                                  <div class="row row-refine">
+                                    <div class="col-3">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mother_area_code">
+                                        <label style="padding-left: 5px;"class="label--desc">Area Code</label>
+                                      </div>
+                                    </div>
+                                    <div class="col-9">
+                                      <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mother_phone">
+                                        <label style="padding-left: 5px;" class="label--desc">Phone Number</label>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                        
                             <div class="form-row">
-                              <div class="name">Pincode</div>
-                              <div class="value">
-                                <div class="input-group">
-                                  <input class="input--style-5" type="text" name="company">
+                                <div class="name">Mobile Number</div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_mobile_no">
+                                  </div>
                                 </div>
-                              </div>
                             </div>
+
+                            
                             <div class="form-row">
-                              <div class="name">Upload Form With documents</div>
+                                <div class="name">Fax</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_fax">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Email id</div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="mother_email">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Other Details</strong></u></p></div>
+                            
+                            <div class="form-row" style="padding-top: 10px;">
+                                <div class="name">College Address<span style="color: red;">*</span></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="college_add">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="name">Passed Xth standard in Maharashtra?<span style="color: red;">*</span></div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="passed_x">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Father Domiciled in Maharashtra?<span style="color: red;">*</span></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="father_dom">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="name">Current Year<span style="color: red;">*</span></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="current_year">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="name">Percentage in previous exam<span style="color: red;">*</span></div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="prev_exam">
+                                  </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-row">
+                                <div class="name">Annual Income<span style="color: red;">*</span></div>
+                                <div></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="income">
+                                  </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-row">
+                                <div class="name">Admission through<br> process<span style="color: red;">*</span></div>
+                                <div class="value">
+                                  <div class="input-group">
+                                    <input class="input--style-5" type="text" name="xii">
+                                  </div>
+                                </div>
+                            </div>
+
+                                     
+                            <div class="form-row">
+                              <div class="name">Upload Form With documents<span style="color: red;">*</span></div>
                               <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                              <label for="fileupload"> Select a file to upload</label>
+                              <label style="padding-left: 5px;" for="fileupload"> Select a file to upload</label>
                             </div>
                             {% for message in get_flashed_messages() %}
 						                <p style="color: red; font-size: 13px;"> <strong>Error:</strong>{{message}}</p>
 						                {% endfor %}
-                
+                <!--
                             <div class="form-row p-t-20">
                               <label class="label label--block">Are you an existing Hostel student?</label>
                               <div class="p-t-15">
@@ -380,7 +747,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <span class="checkmark"></span>
                                 </label>
                               </div>
-                            </div>
+                            </div>-->
                             <!--<div>
                               <button class="btn btn--radius-2 btn--red" type="submit" >Register</button>
                             </div>-->

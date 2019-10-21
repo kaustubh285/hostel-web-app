@@ -396,3 +396,6 @@ create table stud_pers(stud_id varchar(20)not null references host_stud(stud_id)
 
 create table stud_father(stud_id varchar(20) not null references host_stud(stud_id), surname varchar(20) not null, father_name varchar(20) not null, occupation varchar(20) not null, organization varchar(20), qualification varchar(20), office_addr varchar(20) not null, mobile_no varchar(20), fax varchar(20), email_id varchar(20));
 
+#####################################################################################################
+
+select h.stud_id, h.name, h.college_name, s.mobile_no, p.stud_mess_id, p.payment_monthly, p.payment_till_now, p.last_payment_amt, p.last_payment_date from host_stud as h , stud_pers as s, paid as p where h.stud_id ='043';
