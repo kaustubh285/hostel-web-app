@@ -66,45 +66,64 @@
                       </div>
         
     </section>
-  -->
-    <section class="content container-fluid">
+  --><section class="content container-fluid">
       <div style="text-align: center;">
-            <div class="Contain">
-                <h2>Hostel Details</h2>
-                    <table id="tabb" class="table table-striped table-bordered "style="border-color:black;">
-                        <thead class="thead-dark">
+          <div class="contain">
+              <h2>Hostel Details</h2>
+              <form >
+                  <table class="table table-striped table-bordered" style=" overflow-x: scroll; border-color:black ; size: inherit;" >
+                      <thead class="thead-dark">
                           <tr>
-                              <th>stud_id</th>
-                              <th>stud_mess_id</th>
-                              <th>name</th>
-                              <th>surname</th>
-                              <th>college_name</th>
-                              <th>mobile_number</th>
-                              <th>Monthly</th>
-                              <th>paid_till_now</th>
-                              <th>last_payment_amt</th>
-                              <th>last_payment_date</th>
+                              <th>student Id</th>
+                              <th>Name</th>
+                              <th>Surname</th>
+                              <th>Studend Mess id</th>
+                              <th>Payment Monthly</th>
+                              <th>Payment till now</th>
+                              <th>Previous Amount</th>
+                              <th>Previous date</th>
+                              <th>Payment date start</th>
+                              <th>Mess monthly Amount</th>
+                              <th>Hostel yearly Amount</th>
                           </tr>
                         </thead>
                         <tbody>
-                            {% if data %}
+                            {% if datassddd %}
                           <tr>
-                            <td>{{data.stud_id}}</td>
-                            <td>{{data.fname}}</td>
-                            <td>{{data.lname}}</td>
-                            <td>{{data.father_name}}</td>
-                            <td>{{data.mother_name}}</td>
-                            <td>{{data.mobile_number}}</td>
-                            <td>{{data.Monthly}}</td>
-                            <td>{{data.paid_till_now}}</td>
-                            <td>{{data.last_payment_amt}}</td>
-                            <td>{{data.last_payment_date}}</td>
+                             
+                            <td><input type="text" value="{{data.stud_id}}" name="stud_id"></td>
+                            <td><input type="text" value="{{data.fname}}" name="fname"></td>
+                            <td><input type="text" value="{{data.lname}}" name="lname"></td>
+                            <td><input type="text" value="{{data.father_name}}" name="father_name"></td>
+                            <td><input type="text" value="{{data.mother_name}}" name="mother_name"></td>
+                            <td><input type="text" value="{{data.mobile_number}}" name="mobile_number"></td>
+                            <td><input type="text" value="{{data.Monthly}}" name="Monthly"></td>
+                            <td><input type="text" value="{{data.paid_till_now}}" name="paid_till_now"></td>
+                            <td><input type="text" value="{{data.last_payment_amt}}" name="last_payment_amt"></td>
+                            <td><input type="text" value="{{data.last_payment_date}}" name="last_payment_date"></td>
                           </tr>
                           {% endif %}
+
+
+                          {% for data in datas %}
+                          <tr>
+                              <td>{{data.stud_id}}</td><!--<input type="text" value="{{data.stud_id}}" name="stud_id" size="10px"></td> -->
+                              <td><input type="text" value="{{data.fname}}" name="fname" size="10px"></td>
+                              <td><input type="text" value="{{data.lname}}" name="lname"size="10px"></td>
+                              <td><input type="text" value="{{data.stud_mess_id}}" name="mess_id" size="10px"></td>
+                              <td><input type="text" value="{{data.payment_method_monthly}}" name="payment_method_monthly" size="15px"></td>
+                              <td><input type="text" value="{{data.payment_till_now}}Rs." name="payment_till_now" size="15px"></td>
+                              <td><input type="text" value="{{data.prev_payment_amt}}" name="prev_payment_amt" size="15px"></td>
+                              <td><input type="date" value="{{data.prev_amt_date}}" name="prev_amt_date" size="10px"></td>
+                              <td><input type="text" value="{{data.payment_start_date}}" name="last_payment_amt" size="15px"></td>
+                              <td><input type="text" value="{{data.hostel_yearly}}" name="hostel_yearly" size="10px"></td>
+                              <td><input type="text" value="{{data.mess_monthly}}" name="mess_monthly" size="10px"></td>
+                            </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
-                      </div>
-        
+              </form></div>
+        </div>
     </section>
 
 {%endblock%}

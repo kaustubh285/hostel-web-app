@@ -1,0 +1,231 @@
+{%extends "main.html"%}
+{%block sidebar%}
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">Student</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li ><a href="{{ url_for('home') }}"><i class="fa fa-link"></i> <span>Home</span></a></li>
+      <li class="active"><a href="{{ url_for('registration') }}"><i class="fa fa-link"></i> <span>Add a student</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>View Details</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url_for('view_hostel') }}">View Hostel Details</a></li>
+          <li><a href="{{ url_for('view_mess') }}">View Mess Details</a></li>
+        </ul>
+      </li>
+    </ul>
+    {%endblock%}
+
+{%block content%}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PVPP Hostel</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="static/dist/css/skins/skin-blue.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <!-- Icons font CSS-->
+  <link href="static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+  <link href="static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <!-- Font special for pages-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+  <!-- Vendor CSS-->
+  <link href="static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+  <link href="static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+  <!-- Main CSS-->
+  <link href="static/css/main.css" rel="stylesheet" media="all">
+    <style>
+      function val() {
+        var x = document.forms["form"]["fname"].value;
+        if (x == "")
+         {
+          alert("Name must be filled out");
+          return false;
+        }
+        
+      }
+        
+    .contain{
+      width: 50%;
+    }
+    
+    </style>
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body>
+    
+    <!-- Main content -->
+    <section class="content container-fluid">
+            <div class="">
+                    <div class="wrapper wrapper--w790">
+                
+                      <div class="card card-5">
+                        <div class="card-heading">
+                          <h6 class="title">Student Registration Form</h6>
+                        </div>
+                        <div class="card-body">
+                          <form method="POST" name="form" enctype="multipart/form-data" role="form" onsubmit="return (val())" action="" style="font-size: 12px;" >
+                            
+                            <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Student Payment Details</strong></u></p></div>
+                            
+                           <div class="form-row m-b-55" style="padding-top: 20px;">
+                              <div class="name" >Id</div>
+                              <div class="value">
+                                <div class="row row-space">
+                                  <div class="col-2">
+                                    <div class="input-group-desc">
+                                      <input class="input--style-5" type="text" name="hostel_id">
+                                      <label style="padding-left: 5px;"class="label--desc">Hostel Id<span style="color: red;">*</span></label>
+                                    </div>
+                                  </div>
+                                  <div class="col-2">
+                                    <div class="input-group-desc">
+                                      <input class="input--style-5" type="text" name="mess_id">
+                                      <label style="padding-left: 5px;"class="label--desc">Mess Id<span style="color: red;">*</span></label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                              <div class="form-row p-t-20">
+                              <label class="label label--block">Hostel Payment?</label>
+                              <div class="p-t-15">
+                                <label class="radio-container m-r-55">Yearly
+                                  <input type="radio" checked="checked" name="hostel_type">
+                                  <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Monthly
+                                  <input type="radio" name="hostel_type">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </div>
+                            </div>
+                            
+                            <div class="form-row p-t-20">
+                                    <label class="label label--block">Mess Payment?</label>
+                                    <div class="p-t-15">
+                                      <label class="radio-container m-r-55">Yearly
+                                        <input type="radio" checked="checked" name="mess_type">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                      <label class="radio-container">Monthly
+                                        <input type="radio" name="mess_type">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                            </div>
+
+                              <div class="form-row">
+                                  <div class="name">Hostel total payment till now<span style="color: red;">*</span></div>
+                                  <div class="value">
+                                    <div class="input-group">
+                                      <input class="input--style-5" type="number" name="hostel_total_till_now">
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="form-row">
+                                        <div class="name">Hostel last payment date<span style="color: red;">*</span></div>
+                                        <div class="value">
+                                          <div class="input-group">
+                                            <input class="input--style-5" type="date" name="hostel_prev_date">
+                                          </div>
+                                        </div>
+                                      </div>
+                                
+                              <div class="form-row">
+                                    <div class="name">Mess total payment till now<span style="color: red;">*</span></div>
+                                    <div class="value">
+                                      <div class="input-group">
+                                        <input class="input--style-5" type="number" name="mess_total_till_now">
+                                      </div>
+                                    </div>
+                                  </div>
+                                
+                              <div class="form-row">
+                                    <div class="name">Mess last payment date<span style="color: red;">*</span></div>
+                                    <div class="value">
+                                      <div class="input-group">
+                                        <input class="input--style-5" type="date" name="mess_prev_date">
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                            {% for message in get_flashed_messages() %}
+						                <p style="color: red; font-size: 13px;"> <strong>Error:</strong>{{message}}</p>
+						                {% endfor %}
+                <!--
+                            <div class="form-row p-t-20">
+                              <label class="label label--block">Are you an existing Hostel student?</label>
+                              <div class="p-t-15">
+                                <label class="radio-container m-r-55">Yes
+                                  <input type="radio" checked="checked" name="exist">
+                                  <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                  <input type="radio" name="exist">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </div>
+                            </div>-->
+                            <!--<div>
+                              <button class="btn btn--radius-2 btn--red" type="submit" >Register</button>
+                            </div>-->
+                            <button type="submit">Submit</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- Jquery JS-->
+                  <script src="static/vendor/jquery/jquery.min.js"></script>
+                  <!-- Vendor JS-->
+                  <script src="static/vendor/select2/select2.min.js"></script>
+                  <script src="static/vendor/datepicker/moment.min.js"></script>
+                  <script src="static/vendor/datepicker/daterangepicker.js"></script>
+                
+                  <!-- Main JS-->
+                  <script src="static/js/global.js"></script>
+          
+    </section>
+    {%endblock%}
+
+    </body>
+    </html>

@@ -23,10 +23,57 @@
     {%block content%}
     <!-- Main content -->
     <section class="content container-fluid">
+
+        <div class="col-md-3 col-sm-6 col-xs-12" style="width: 50% !important;">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><i class='far fa-edit' ></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">Edit details</span>
+                <form name = selectstud method="POST">
+                      {{selectstud.csrf_token}}
+                      {{selectstud.stud_id}}<input type="submit" value="edit">
+                      <label> Select the Id of the student to view data of</label>
+                  </form>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="width: 50% !important;">
+                <div class="info-box">
+                  <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+      
+                  <div class="info-box-content">
+                    <span class="info-box-text">New Members</span>
+                    <span class="info-box-number">2,000</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              
+          <div class="col-md-3 col-sm-6 col-xs-12" style="width: 100% !important;">
+              <div class="info-box">
+                <span class="info-box-icon bg-red" style="height: 100% !important;"><i class="far fa-list-alt"></i></span>
+    
+                <div class="info-box-content" >
+                  <span class="info-box-text" ><marquee direction=up><p>
+                    Kaustubh Deshpande Payment due soon 630Rs.</p>
+                    <p>
+                        Kaustubh Deshpande Payment due soon 630Rs.</p>
+                        <p>
+                            Kaustubh Deshpande Payment due soon 630Rs.</p>
+                            <p>
+                                Kaustubh Deshpande Payment due soon 630Rs.</p></marquee></span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
       <div style="text-align: center;" >
         <h2>DR. PANJABRAO DESHMUKH BOYS HOSTEL</h2>
         <p><u>(Only for economically weaker section students)</u></p>
-        <br><br>
         <p>Managed by</p>
         <h2>VASANTDADA PATIL PRATHISHTHAN</h2>
         <div style="align-items: center;  align-self: center; widows: 100px;;height:180px;border:1px solid #000;"><br><br>At:<br> 1/A-3 , Shivshahi Punarvasan Prakalp<br>

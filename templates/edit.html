@@ -99,13 +99,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="card-body">
                           <form method="POST" name="form" enctype="multipart/form-data" role="form" onsubmit="return (val())" action="" style="font-size: 12px;" >
-                            
+                            {{form.csrf_token}}
                             <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Student Personal Details</strong></u></p></div>
                             <div class="form-row" style="padding-top: 20px;">
                                 <div class="name">Student Id Number<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="stud_id">
+                                    {{form.stud_id (class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -115,13 +115,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="row row-space">
                                   <div class="col-2">
                                     <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="fname">
+                                      {{form.fname(class_="input--style-5")}}
+                                      
                                       <label style="padding-left: 5px;"class="label--desc">first name<span style="color: red;">*</span></label>
                                     </div>
                                   </div>
                                   <div class="col-2">
                                     <div class="input-group-desc">
-                                      <input class="input--style-5" type="text" name="lname">
+                                        {{form.lname(class_="input--style-5")}}
+                                      
                                       <label style="padding-left: 5px;"class="label--desc">last name<span style="color: red;">*</span></label>
                                     </div>
                                   </div>
@@ -136,13 +138,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="row row-space">
                                     <div class="col-2">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="father_name">
+                                          {{form.father_name(class_="input--style-5")}}
+                                        
                                         <label style="padding-left: 5px;"class="label--desc">Father's Name<span style="color: red;">*</span></label>
                                       </div>
                                     </div>
                                     <div class="col-2">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mother_name">
+                                          {{form.mother_name(class_="input--style-5")}}
+                                        
                                         <label style="padding-left: 5px;"class="label--desc">Mother's Name<span style="color: red;">*</span></label>
                                       </div>
                                     </div>
@@ -156,7 +160,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="name">Mobile No<span style="color: red;">*</span></div>
                                   <div class="value">
                                     <div class="input-group">
-                                      <input class="input--style-5" type="number" name="mobile_no">
+                                        {{form.mobile_no(class_="input--style-5")}}
+                                      
                                     </div>
                                   </div>
                               </div>
@@ -165,7 +170,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="name">Email id<span style="color: red;">*</span></div>
                                   <div class="value">
                                     <div class="input-group">
-                                      <input class="input--style-5" type="email" name="email">
+                                        {{form.email(class_="input--style-5")}}
+                                      
                                     </div>
                                   </div>
                                 </div>
@@ -177,13 +183,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="row row-space">
                                       <div class="col-2">
                                         <div class="input-group-desc">
-                                          <input class="input--style-5" type="text" name="add1">
+                                            {{form.add1(class_="input--style-5")}}
+                                          
                                           <label style="padding-left: 5px;"class="label--desc">Address Line 1<span style="color: red;">*</span></label>
                                         </div>
                                       </div>
                                       <div class="col-2">
                                         <div class="input-group-desc">
-                                          <input class="input--style-5" type="text" name="add2">
+                                            {{form.add2(class_="input--style-5")}}
+                                          
                                           <label style="padding-left: 5px;" class="label--desc">Address Line 2<span style="color: red;">*</span></label>
                                         </div>
                                       </div>
@@ -196,13 +204,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                       <div class="row row-space">
                                         <div class="col-2">
                                           <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="city">
+                                              {{form.city(class_="input--style-5")}}
+                                            
                                             <label style="padding-left: 5px;"class="label--desc">City<span style="color: red;">*</span></label>
                                           </div>
                                         </div>
                                         <div class="col-2">
                                           <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="state">
+                                              {{form.state(class_="input--style-5")}}
+                                            
                                             <label style="padding-left: 5px;" class="label--desc">State<span style="color: red;">*</span></label>
                                           </div>
                                         </div>
@@ -215,7 +225,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="row row-space">
                                           <div class="col-2">
                                             <div class="input-group-desc">
-                                              <input class="input--style-5" type="text" name="pincode">
+                                                {{form.pincode(class_="input--style-5")}}
+                                              
                                               <label style="padding-left: 5px;"class="label--desc">Pincode<span style="color: red;">*</span></label>
                                             </div>
                                           </div>
@@ -234,13 +245,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="row row-refine">
                                           <div class="col-3">
                                             <div class="input-group-desc">
-                                              <input class="input--style-5" type="text" name="area_code">
+                                                {{form.area_code(class_="input--style-5")}}
+                                              
                                               <label style="padding-left: 5px;" class="label--desc">Area Code<span style="color: red;">*</span></label>
                                             </div>
                                           </div>
                                           <div class="col-9">
                                             <div class="input-group-desc">
-                                              <input class="input--style-5" type="text" name="phone">
+                                                {{form.phone(class_="input--style-5")}}
+                                              
                                               <label  style="padding-left: 5px;" class="label--desc">Phone Number<span style="color: red;">*</span></label>
                                             </div>
                                           </div>
@@ -252,7 +265,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="name">Mobile No(Parent's)<span style="color: red;">*</span></div>
                                         <div class="value">
                                           <div class="input-group">
-                                            <input class="input--style-5" type="text" name="par_mobile_no">
+                                              {{form.par_mobile_no(class_="input--style-5")}}
+                                            
                                           </div>
                                         </div>
                                       </div>
@@ -263,7 +277,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="input-group">
                                               <!--<form id="form1" runat="server">-->
                                                 <div>
-                                                    <input class="input--style-5" type="date" name="date">
+                                                    {{form.bdate(class_="input--style-5")}}
+                                                    
                             
                                             </div>
                                           </div>
@@ -393,7 +408,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="name">Place Of Birth<span style="color: red;">*</span></div>
                                   <div class="value">
                                     <div class="input-group">
-                                      <input class="input--style-5" type="text" name="POB">
+                                        {{form.pob(class_="input--style-5")}}
+                                      
                                     </div>
                                   </div>
                                 </div>
@@ -401,7 +417,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Nationality<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="nationality">
+                                    {{form.nationality(class_="input--style-5")}}
+                                  
                                 </div>
                               </div>
                             </div>
@@ -409,7 +426,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Religion<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="religion">
+                                    {{form.religion(class_="input--style-5")}}
+                                  
                                 </div>
                               </div>
                             </div>
@@ -418,7 +436,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Blood Group</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="gb">
+                                      {{form.gb(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                               </div>
@@ -427,7 +446,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Caste<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="caste">
+                                    {{form.caste(class_="input--style-5")}}
+                                  
                                 </div>
                               </div>
                             </div>
@@ -435,7 +455,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Sub-caste</div>
                               <div class="value">
                                 <div class="input-group">
-                                  <input class="input--style-5" type="text" name="sub_caste">
+                                    {{form.sub_caste(class_="input--style-5")}}
+                                  
                                 </div>
                               </div>
                             </div>
@@ -445,13 +466,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="row row-space">
                                     <div class="col-2">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="aadhar">
+                                          {{form.aadhar(class_="input--style-5")}}
+                                        
                                         <label style="padding-left: 5px;" class="label--desc">Aadhar Card No<span style="color: red;">*</span></label>
                                       </div>
                                     </div>
                                     <div class="col-2">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="pan">
+                                          {{form.pan(class_="input--style-5")}}
+                                        
                                         <label style="padding-left: 5px;" class="label--desc">Pan Card</label>
                                       </div>
                                     </div>
@@ -465,22 +488,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="value">
                                 <div class="input-group">
                                   <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="gender">
-                                      <option disabled="disabled" selected="selected">Choose option</option>
-                                      <option>Male </option>
-                                    </select>
+                                      {{form.gender(class_="input--style-5")}}
+                                    
                                     <div class="select-dropdown"></div>
                                   </div>
                                 </div>
                               </div>
                             </div>
+
+                            <!--  Father's Details!!-->
                             
                             <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Father's Details</strong></u></p></div>
                             <div class="form-row" style="padding-top: 10px;">
                                 <div class="name">Present Designation</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_present_designation">
+                                      {{form.f_occupation(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -490,7 +514,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_organization">
+                                    {{form.f_organization(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -500,7 +525,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Qualification</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_qualification">
+                                      {{form.f_qualification(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -509,7 +535,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Office Address</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_office_address">
+                                      {{form.f_office_addr(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -520,13 +547,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="row row-refine">
                                     <div class="col-3">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="father_area_code">
-                                        <label style="padding-left: 5px;" class="label--desc">Area Code</label>
+                                          {{form.farea_code(class_="input--style-5")}}
+                                       
+                                          <label style="padding-left: 5px;" class="label--desc">Area Code</label>
                                       </div>
                                     </div>
                                     <div class="col-9">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="father_phone">
+                                          {{form.father_phone(class_="input--style-5")}}
+                                       
                                         <label style="padding-left: 5px;"class="label--desc">Phone Number</label>
                                       </div>
                                     </div>
@@ -539,7 +568,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_mobile_no">
+                                      {{form.f_mobile_no(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -549,7 +579,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Fax</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_fax">
+                                      {{form.f_fax(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -559,18 +590,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Email id</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_email">
-                                  </div>
+                                      {{form.f_email(class_="input--style-5")}}
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <!-- Mother's Details-->
 
                             <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Mother's / Local Guardian's Details</strong></u></p></div>
-                            
                             <div class="form-row" style="padding-top: 10px;">
                                 <div class="name">Present Designation</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_present_designation">
+                                      {{form.m_occupation(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -580,7 +613,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_organization">
+                                    {{form.m_organization(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -590,7 +624,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Qualification</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_qualification">
+                                      {{form.m_qualification(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -599,7 +634,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Office Address</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_office_address">
+                                      {{form.m_office_addr(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -610,14 +646,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="row row-refine">
                                     <div class="col-3">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mother_area_code">
-                                        <label style="padding-left: 5px;"class="label--desc">Area Code</label>
+                                          {{form.marea_code(class_="input--style-5")}}
+                                       
+                                          <label style="padding-left: 5px;" class="label--desc">Area Code</label>
                                       </div>
                                     </div>
                                     <div class="col-9">
                                       <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mother_phone">
-                                        <label style="padding-left: 5px;" class="label--desc">Phone Number</label>
+                                          {{form.mother_phone(class_="input--style-5")}}
+                                       
+                                        <label style="padding-left: 5px;"class="label--desc">Phone Number</label>
                                       </div>
                                     </div>
                                   </div>
@@ -629,7 +667,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_mobile_no">
+                                      {{form.m_mobile_no(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -639,7 +678,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Fax</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_fax">
+                                      {{form.m_fax(class_="input--style-5")}}
+                                    
                                   </div>
                                 </div>
                             </div>
@@ -649,18 +689,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Email id</div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="mother_email">
-                                  </div>
+                                      {{form.m_email(class_="input--style-5")}}
+                                    </div>
                                 </div>
                             </div>
-
+                            
                             <div style="background-color:lightgrey; height:30px ;"><p style="font-size: 20px;"><u><strong>Other Details</strong></u></p></div>
                             
                             <div class="form-row" style="padding-top: 10px;">
                                 <div class="name">College Address<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="college_add">
+                                    {{form.college_addr(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -670,7 +710,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="passed_x">
+                                    {{form.xiiloc(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -680,7 +720,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Father Domiciled in Maharashtra?<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="father_dom">
+                                    {{form.f_dom_maha(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -689,7 +729,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Current Year<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="current_year">
+                                    {{form.current_year(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -699,7 +739,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="prev_exam">
+                                    {{form.percent_in_prev(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -710,7 +750,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="income">
+                                    {{form.annual_income(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -720,7 +760,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Admission through<br> process<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    <input class="input--style-5" type="text" name="xii">
+                                    {{form.admission_through(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -729,6 +769,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-row">
                               <div class="name">Upload Form With documents<span style="color: red;">*</span></div>
                               <input type="file" name="fileupload" value="fileupload" id="fileupload">
+                              
                               <label style="padding-left: 5px;" for="fileupload"> Select a file to upload</label>
                             </div>
                             {% for message in get_flashed_messages() %}
