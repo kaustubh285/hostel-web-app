@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField , TextAreaField, IntegerField, SelectField , FloatField , FileField
+from wtforms import StringField, PasswordField , TextAreaField, IntegerField, SelectField , FloatField , FileField , SubmitField
 from wtforms.validators import InputRequired, Length
 from wtforms.fields.html5 import DateField 
 from flask_wtf.file import FileField 
@@ -25,7 +25,7 @@ class student_main(FlaskForm):
     area_code = IntegerField('area', validators=[InputRequired()])
     phone = StringField('phone', validators=[InputRequired()])
     par_mobile_no = StringField('par_mobile_no', validators=[InputRequired()])
-    bdate = DateField('bday', validators=[InputRequired()])
+    bdate = DateField('bday', validators=[])
     pob = StringField('pob', validators=[InputRequired()])
     nationality = StringField('nationality', validators=[InputRequired()])
     religion = StringField('religion', validators=[InputRequired()])
@@ -40,7 +40,7 @@ class student_main(FlaskForm):
     m_organization = StringField('email', validators=[InputRequired()])
     m_qualification = StringField('city', validators=[InputRequired()])
     m_office_addr = StringField('state', validators=[InputRequired()])
-    marea_code = IntegerField('pincode', validators=[InputRequired()])
+    marea_code = IntegerField('pincode', validators=[InputRequired(), Length(min=0, max=3)])
     mother_phone = IntegerField('area', validators=[InputRequired()])
     m_fax = StringField('phone', validators=[InputRequired()])
     m_mobile_no = StringField('par_mobile_no', validators=[InputRequired()])
@@ -56,14 +56,35 @@ class student_main(FlaskForm):
     f_mobile_no = StringField('par_mobile_no', validators=[InputRequired()])
     f_email = StringField('par_mobile_no', validators=[InputRequired()])
 
-    college_addr = TextAreaField('add1', validators=[InputRequired()])
-    xiiloc = StringField('xiiloc')
-    f_dom_maha = StringField('f_dom_maha')
+    college_addr = TextAreaField('add1')
+    xiiloc = SelectField('XII in Maharashtra?', choices=[('yes','yes'),('no','no')])
+    f_dom_maha = SelectField('Father Domicile in Maharashtra?', choices=[('yes','yes'),('no','no')])
     current_year = IntegerField('current_year')
     percent_in_prev = FloatField('percent_in_prev')
     annual_income = FloatField('annual_income')
     admission_through = StringField('ad_through')
     #file_upload = FileField('file_upload', FileNotFoundError('dont know!!!'))
 
+
 class selectstud(FlaskForm):
     stud_id = SelectField('Programming Language')
+    submit = SubmitField("Edit")
+
+class viewstud(FlaskForm):
+    stud_id = SelectField('Programming Language')
+    submit = SubmitField("View data")
+
+class payment_form(FlaskForm):
+    payment_to = SelectField(" Pay method", choices=[("HOstel","Hostel"),("Mess","Mess")])
+    stud_id = SelectField("stud_id")
+    submit = SubmitField("payment")
+
+class hostelpay(FlaskForm):
+    stud_id = StringField("Student Id")
+    fname = StringField("first name")
+    mess_id = StringField("Mess Id")
+    pay_method = SelectField(" Pay method", choices=[("MONTHLY","MONTHLY"),("YEARLY","YEARLY")])
+    payment_till_now = FloatField("Payment till now")
+    prev_pay_amnt = FloatField("Previous pay amount")
+    prev_pay_date = DateField("Previous payment date")
+    payment_start_date = DateField("Payment start date")

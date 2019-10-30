@@ -105,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Student Id Number<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    {{form.stud_id (class_="input--style-5")}}
+                                    {{form.stud_id(class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
@@ -792,7 +792,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!--<div>
                               <button class="btn btn--radius-2 btn--red" type="submit" >Register</button>
                             </div>-->
+                            {% if edit%}
+                            <button type="submit">edit</button>
+                            {% else%}
                             <button type="submit">Submit</button>
+                            {%endif%}
                           </form>
                         </div>
                       </div>

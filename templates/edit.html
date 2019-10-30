@@ -105,16 +105,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="name">Student Id Number<span style="color: red;">*</span></div>
                                 <div class="value">
                                   <div class="input-group">
-                                    {{form.stud_id (class_="input--style-5")}}
+                                    {{form.stud_id(readonly="true",class_="input--style-5")}}
                                   </div>
                                 </div>
                             </div>
+                            {% if form.stud_id == 'vu4f1516043'%}
+                            {%else%}
                             <div class="form-row m-b-55">
                               <div class="name">Name</div>
                               <div class="value">
                                 <div class="row row-space">
                                   <div class="col-2">
-                                    <div class="input-group-desc">
+                                    <div class="input-group-desc">                              
                                       {{form.fname(class_="input--style-5")}}
                                       
                                       <label style="padding-left: 5px;"class="label--desc">first name<span style="color: red;">*</span></label>
@@ -130,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                               </div>
                             </div>
-
+                            {%endif%}
                             <br>
                             <div class="form-row m-b-55">
                                 <div class="name">Parents</div>
@@ -408,7 +410,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="name">Place Of Birth<span style="color: red;">*</span></div>
                                   <div class="value">
                                     <div class="input-group">
-                                        {{form.pob(class_="input--style-5")}}
+                                        {{form.pob(readonly="true",class_="input--style-5")}}
                                       
                                     </div>
                                   </div>
@@ -417,7 +419,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="name">Nationality<span style="color: red;">*</span></div>
                               <div class="value">
                                 <div class="input-group">
-                                    {{form.nationality(class_="input--style-5")}}
+                                    {{form.nationality(readonly="true", class_="input--style-5")}}
                                   
                                 </div>
                               </div>
@@ -488,7 +490,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <div class="value">
                                 <div class="input-group">
                                   <div class="rs-select2 js-select-simple select--no-search">
-                                      {{form.gender(class_="input--style-5")}}
+                                      {{form.gender(readonly="true",class_="input--style-5")}}
                                     
                                     <div class="select-dropdown"></div>
                                   </div>

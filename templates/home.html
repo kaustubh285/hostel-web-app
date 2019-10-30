@@ -21,6 +21,20 @@
     
     {%endblock%}
     {%block content%}
+    <html>
+      <head>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+      </head>
+    <body>
     <!-- Main content -->
     <section class="content container-fluid">
 
@@ -30,9 +44,10 @@
   
               <div class="info-box-content">
                 <span class="info-box-text">Edit details</span>
-                <form name = selectstud method="POST">
+                <form name ="selectstud" method="POST">
                       {{selectstud.csrf_token}}
-                      {{selectstud.stud_id}}<input type="submit" value="edit">
+                      {{selectstud.stud_id}}
+                      {{selectstud.submit}}<!--<input type="submit" value="edit">-->
                       <label> Select the Id of the student to view data of</label>
                   </form>
               </div>
@@ -45,32 +60,53 @@
                   <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
       
                   <div class="info-box-content">
-                    <span class="info-box-text">New Members</span>
-                    <span class="info-box-number">2,000</span>
+                      <span class="info-box-text"> AddPayment</span>
+                      <form name ="payment_form" method="POST">
+                            {{payment_form.csrf_token}}
+                            {{payment_form.stud_id}}
+                            {{payment_form.payment_to}}
+                            {{payment_form.submit}}<!--<input type="submit" value="edit">-->
+                            <label>Select the Id of the student to add payment of</label>
+                        </form>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
                 <!-- /.info-box -->
               </div>
               
-          <div class="col-md-3 col-sm-6 col-xs-12" style="width: 100% !important;">
+          <div class="col-md-3 col-sm-6 col-xs-12" style="width: 50% !important;">
               <div class="info-box">
                 <span class="info-box-icon bg-red" style="height: 100% !important;"><i class="far fa-list-alt"></i></span>
     
                 <div class="info-box-content" >
-                  <span class="info-box-text" ><marquee direction=up><p>
-                    Kaustubh Deshpande Payment due soon 630Rs.</p>
-                    <p>
-                        Kaustubh Deshpande Payment due soon 630Rs.</p>
-                        <p>
-                            Kaustubh Deshpande Payment due soon 630Rs.</p>
-                            <p>
-                                Kaustubh Deshpande Payment due soon 630Rs.</p></marquee></span>
+                    <marquee direction=up>
+                  <span class="info-box-text" ><p>
+                    Kaustubh Deshpande Payment due soon 630Rs.</p></span>
+                    <span class="info-box-text" ><p>
+                        Kaustubh Deshpande Payment due soon 630Rs.</p></span></marquee>
                 </div>
                 <!-- /.info-box-content -->
               </div>
               <!-- /.info-box -->
             </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12" style="width: 50% !important;">
+                <div class="info-box">
+                  <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+      
+                  <div class="info-box-content">
+                      <span class="info-box-text">view details</span>
+                      <form name = "viewstud" method="POST">
+                            {{viewstud.csrf_token}}
+                            {{viewstud.stud_id}}
+                            {{viewstud.submit}}
+                            <label> Select the Id of the student to view data of</label>
+                      </form>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
       <div style="text-align: center;" >
         <h2>DR. PANJABRAO DESHMUKH BOYS HOSTEL</h2>
         <p><u>(Only for economically weaker section students)</u></p>
@@ -83,4 +119,5 @@
         </br>
           
     </section>
+  </body></html>
 {%endblock%}
